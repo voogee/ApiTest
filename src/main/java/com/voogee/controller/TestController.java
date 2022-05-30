@@ -19,6 +19,7 @@ public class TestController {
     public String test(HttpServletRequest request){
         String r=  HttpUtils.sendHttpGet("https://api8.soyoung.com/v8/misc/abtest");
         System.out.println(r);
+        System.out.println(r);
         return r;
     }
 
