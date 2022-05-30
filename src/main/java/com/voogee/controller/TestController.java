@@ -18,6 +18,7 @@ public class TestController {
     @RequestMapping("test")
     public String test(HttpServletRequest request){
         String r=  HttpUtils.sendHttpGet("https://api8.soyoung.com/v8/misc/abtest");
+        System.out.println(test);
         return r;
     }
 
