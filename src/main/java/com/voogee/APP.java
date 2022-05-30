@@ -17,7 +17,7 @@ public class APP {
 
 //        启动SpringBoot
 //        SpringApplication.run(APP.class,args);
-
+//
         SpringApplication app = new SpringApplication(APP.class);
         app.setBannerMode(Banner.Mode.CONSOLE);//关闭Banner
         app.run(args);
