@@ -1,0 +1,15 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.voogee.mapper.UserMapper">
+
+    <select id="login" resultType="com.voogee.bean.User">
+        SELECT * FROM tb_user where username = #{username} and password = #{password}
+    </select>
+
+    <select id="getAllUser" resultType="com.voogee.bean.User">
+        SELECT * FROM tb_user where id > 0
+    </select>
+
+
+</mapper>
