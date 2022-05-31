@@ -8,7 +8,7 @@
     </select>
 
     <insert id="addMessage">
-        insert  into mqtt_message values (null,#{username},#{topicname},#{qos},#{clientid},#{payload},#{event},#{publish_received_at},null)
+        insert  into mqtt_message(username,topicname,qos,clientid,payload,event,publish_received_at) values (#{username},#{topicname},#{qos},#{clientid},#{payload},#{event},#{publish_received_at})
     </insert>
 
 
