@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @Auther: bruceliu
+ * @Auther: voogee
  * @Date: 2019/12/23 11:04
  * @QQ:1241488705
  * @Description: 启动类  @SpringBootApplication
