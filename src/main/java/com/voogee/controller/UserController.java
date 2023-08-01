@@ -16,6 +16,7 @@ import javax.servlet.http.Part;
 import java.util.*;
 
 
+@CrossOrigin
 @Controller
 @Scope("prototype")
 @RequestMapping("user")

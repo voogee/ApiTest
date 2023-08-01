@@ -11,7 +11,16 @@ public class GenController {
 
     private int code = 0;
     private String msg ="";
+
+    public GenController() {
+        this.code = code;
+        this.msg = msg;
+        this.response = response;
+    }
+
     private Map response = new HashMap();
+
+
 
     public int getCode() {
         return code;
