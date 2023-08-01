@@ -4,11 +4,15 @@
 <mapper namespace="com.voogee.mapper.UserMapper">
 
     <select id="login" resultType="com.voogee.bean.User">
-        SELECT * FROM tb_user where username = #{username} and password = #{password}
+        SELECT * FROM users where username = #{username} and password = #{password}
     </select>
 
     <select id="getAllUser" resultType="com.voogee.bean.User">
-        SELECT * FROM tb_user where id > 0
+        SELECT * FROM users where id > 0
+    </select>
+
+    <select id="selone" resultType="com.voogee.bean.User">
+        SELECT * FROM users where username = #{0}
     </select>
 
 

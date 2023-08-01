@@ -1,7 +1,7 @@
 package com.voogee.controller;
 
 
-import com.voogee.mqtt.MyMqttClient;
+//import com.voogee.mqtt.MyMqttClient;
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.IMqttMessageListener;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletRequest;
 public class SendMq implements MqttCallback, IMqttMessageListener {
 
     @Autowired
-    private MyMqttClient client;
+//    private MyMqttClient client;
 
     @Override
     public void connectionLost(Throwable throwable) {
@@ -35,17 +35,17 @@ public class SendMq implements MqttCallback, IMqttMessageListener {
 //        client.publishMessage("testtopic2","2",2);
     }
 
-    @ResponseBody
-    @RequestMapping("sedmq")
-    public GenController messageArrived(HttpServletRequest request) throws Exception {
-        String topicname = request.getParameter("topicname");
-        String message = request.getParameter("message");
-        int qos = Integer.parseInt(request.getParameter("qos"));
-        client.publishMessage(topicname,message,qos);
-        GenController result = new GenController();
-        return result;
-
-    }
+//    @ResponseBody
+//    @RequestMapping("sedmq")
+//    public GenController messageArrived(HttpServletRequest request) throws Exception {
+//        String topicname = request.getParameter("topicname");
+//        String message = request.getParameter("message");
+//        int qos = Integer.parseInt(request.getParameter("qos"));
+//        client.publishMessage(topicname,message,qos);
+//        GenController result = new GenController();
+//        return result;
+//
+//    }
 
 
     @Override
