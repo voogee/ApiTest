@@ -15,6 +15,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.Part;
 import java.util.*;
 
+/**
+ * 用户分组
+ * 用户相关的接口
+ *
+ */
+
 
 @CrossOrigin
 @Controller
@@ -27,8 +33,15 @@ public class UserController{
     @Resource
     private UserMapper usermapper;
 
+    /**
+     * 用户登录
+     * 用户登录
+     * @param
+     * @param
+     * @return
+     */
+
     @ResponseBody
-//    @PostMapping("user_login")
     @RequestMapping(value = "/user_login",method = {RequestMethod.GET,RequestMethod.POST})
     public GenController user_login(User user, HttpServletRequest request){
         GenController result = new GenController();
@@ -48,7 +61,7 @@ public class UserController{
     }
 
     @ResponseBody
-    @PostMapping("user_find")
+    @RequestMapping("user_find")
     public User user_find(User user, HttpServletRequest request){
         String username = request.getParameter("username");
         System.out.println(username);
@@ -63,17 +76,5 @@ public class UserController{
 
     }
 
-    @ResponseBody
-    @RequestMapping("user_all")
-    public GenController user_all(HttpServletRequest request){
-        List<User> userList = userService.getAllUser(request);
-        GenController result = new GenController();
-        Map userlist = new HashMap();
-        userlist.put("userlist",userList);
-        userlist.put("hasMore",0);
-        result.setResponse(userlist);
-        return result;
-
-    }
 
 }

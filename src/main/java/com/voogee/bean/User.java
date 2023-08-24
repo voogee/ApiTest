@@ -62,5 +62,16 @@ public class User {
     public void setReg_date(String reg_date) {
         this.reg_date = reg_date;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", reg_date='" + reg_date + '\'' +
+                '}';
+    }
 }
 

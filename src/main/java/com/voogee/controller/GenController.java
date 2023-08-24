@@ -10,16 +10,16 @@ import java.util.Map;
 public class GenController {
 
     private int code = 0;
-    private String msg ="";
+    private String msg ="成功";
+
+
+    private Map response = new HashMap();
 
     public GenController() {
         this.code = code;
         this.msg = msg;
         this.response = response;
     }
-
-    private Map response = new HashMap();
-
 
 
     public int getCode() {
