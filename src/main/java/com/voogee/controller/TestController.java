@@ -16,6 +16,7 @@ import sun.security.util.Password;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.sql.DataSource;
+import java.util.Map;
 
 
 @Controller
@@ -31,12 +32,14 @@ public class TestController {
 
     @ResponseBody
     @RequestMapping(value = "/findByVo", method = {RequestMethod.GET,RequestMethod.POST})
-    public ResultVo findByVo(@RequestParam(name = "username") String username,@RequestParam(name = "password") String password) {
-        String sql = "select * from users where username= %s and password= %s";
-        Integer count = jdbcTemplate.queryForObject(sql, Integer.class,username,password);
+    public ResultVo findByVo(@RequestParam(name = "title") String title,@RequestParam(name = "method") String method) {
+        String sql = "select * from interface where title= ?  and method= ? ";
+        Map<String,Object> mapdata = jdbcTemplate.queryForMap(sql,title,method);
+//        Integer count = jdbcTemplate.queryForObject(sql, Integer.class,"获取项目列表","GET");
         try {
-            if (count ==1){
-                return new ResultVo(0,"登录成功","");
+            if (mapdata != null){
+
+                return new ResultVo(0,"登录成功",mapdata);
             }
         } catch (Exception e){
             return new ResultVo(10001,"登录失败",e);
